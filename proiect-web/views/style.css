@@ -1,0 +1,142 @@
+*{ 
+    padding: 0; 
+    margin: 0; 
+}
+html {
+    box-sizing: border-box;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif; 
+    font-size: calc(1.5vh + 1vw + 1%); 
+    line-height: 1.5; 
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body{ 
+    overflow: auto; 
+    min-height: 100vh; 
+    width: 100%; 
+}
+main, header{
+    padding: 1rem 2rem;
+}
+p{
+    padding: 0.5rem 0;
+}
+main{
+    border-top: 5px solid #bada55;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    min-width: 600px;
+}
+#products{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    
+    flex:1 1 auto;
+}
+#cart{
+    flex: 1 1 20%;
+}
+.card{
+    border: 1px solid #999;
+    padding: 1rem;
+    box-sizing: content-box;
+    max-width: 200px;
+    position: relative;
+}
+.card img{
+    width: 100%;
+    filter: contrast(0.3);
+}
+.card .price{
+    position: absolute;
+    top: 3rem;
+    left: 2rem;
+    transform: rotate(30deg);
+    text-shadow: 2px 2px 2px #333, 1px 1px 2px #eee;
+    color: #bada55;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.card h2{
+    font-size: 1.2rem;
+}
+.card p{
+    font-size: 0.8rem;
+}
+.card .btn{
+    border: 2px solid cornflowerblue;
+    padding: 0.25rem 1rem;
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+.cart-item{
+    border-bottom: 1px solid #666;
+    padding:1rem;
+    width: 100%;
+    position: relative;
+}
+.cart-item .price{
+    position: absolute;
+    top: 2rem;
+    bottom: 1rem;
+    right: 1rem;
+    width: 30%;
+    font-size: 0.8rem;
+    color: #AAA;
+    transform: rotate(30deg);
+}
+.cart-item .title{
+    font-size: 1rem;
+    color: #999;
+    line-height: 1.5rem;
+    height: 1.5rem;
+    width: 70%;
+}
+.cart-item .controls{
+    height: 1.5rem;
+    cursor: pointer;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #eee;
+}
+.cart-item span:nth-child(1),
+.cart-item span:nth-child(3){
+    border: 1px solid cornflowerblue;
+    color: cornflowerblue;
+    background: #fff;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 0 0.5rem;
+    display: block;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+    
+    #products{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+        
+        flex:1 1 auto;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #products{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1rem;
+        
+        flex:1 1 auto;
+    }
+  }
